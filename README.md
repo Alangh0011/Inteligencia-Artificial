@@ -1,82 +1,123 @@
 # 🧠 Prácticas de Inteligencia Artificial
 
-¡Hola! 👋 Bienvenido a este repositorio de prácticas de **Inteligencia Artificial**. Aquí vas a encontrar ejercicios y ejemplos para entender cómo funciona la IA desde cero. No necesitas ser un experto: este material está pensado para aprender paso a paso, con ejemplos concretos.
-
-Cada laboratorio se enfoca en un tema específico y te ayuda a aprenderlo con código y ejercicios prácticos. Si te interesa cómo aprenden las máquinas o cómo se toman decisiones automáticas, ¡este repo es para ti!
+¡Hola! 👋 Bienvenido a este repositorio de prácticas de **Inteligencia Artificial**. Aquí vas a encontrar ejercicios paso a paso para entender cómo funciona la IA, incluso si estás empezando. Cada laboratorio tiene ejemplos, código y una explicación sencilla de qué hace, cómo lo hace y para qué sirve.
 
 ---
 
 ## 📚 ¿Qué vas a encontrar?
 
 ### 🔍 Laboratorio 2: Depth First Search (DFS)
-- **¿Qué es esto?** Un algoritmo para explorar caminos, como si estuvieras buscando la salida de un laberinto sin saber nada del mapa.
-- **¿Cómo funciona?** Prueba caminos uno por uno, y si se encuentra con un obstáculo, retrocede y prueba otro.
-- **¿Cuándo usarlo?** Cuando quieres recorrer o explorar todos los posibles caminos, como resolver puzzles o laberintos.
-- ✅ **Ejemplo práctico:** Encontrar la salida en un laberinto o resolver un rompecabezas como el 4-puzzle.
+- **Algoritmo:** Búsqueda en profundidad (DFS).
+- **¿Cómo funciona?**
+  - Usa una estructura tipo *pila* (stack) para explorar un camino hasta el final antes de retroceder.
+  - Es útil cuando quieres recorrer todos los caminos posibles.
+- **Fórmula/Pasos:**
+  1. Elige un nodo inicial.
+  2. Agrégalo a la pila.
+  3. Mientras la pila no esté vacía:
+     - Saca el último nodo.
+     - Si es la meta, termina.
+     - Si no, agrega sus hijos (vecinos) a la pila.
+- ✅ **Ejemplo práctico:** Resolver un laberinto o el puzzle 4-puzzle.
+- 📦 **Librerías usadas:** `collections`, `copy`
 
 ---
 
 ### 🧩 Laboratorio 3: Resolución de Problemas con Búsqueda Informada
-- **¿Qué es esto?** Son técnicas más "inteligentes" que DFS, que intentan adivinar cuál camino es mejor.
-- **¿Cómo funciona?** Usa pistas (llamadas heurísticas) para encontrar la solución más rápido.
-- **¿Cuándo usarlo?** Cuando el problema es grande y necesitas eficiencia.
-- ✅ **Ejemplo práctico:** Planear la mejor ruta para un repartidor (como en Uber o Rappi).
+- **Algoritmos:** A* (A estrella), Simulated Annealing.
+- **¿Cómo funciona?**
+  - A* busca el camino más corto usando heurísticas.
+    - `f(n) = g(n) + h(n)`
+    - Donde:
+      - `g(n)` es el costo del camino hasta el nodo.
+      - `h(n)` es la estimación al objetivo.
+  - Simulated Annealing simula cómo se enfría un metal para encontrar una solución óptima evitando quedarse en mínimos locales.
+- ✅ **Ejemplo práctico:** Planear rutas óptimas para entregas.
+- 📦 **Librerías usadas:** `heapq`, `math`, `random`
 
 ---
 
 ### ✅ Laboratorio 4: Métodos de Validación
-- **¿Qué es esto?** Técnicas para saber si tu modelo está aprendiendo bien o solo "memorizando".
-- **¿Cómo funciona?** Separa los datos en dos partes: una para entrenar y otra para probar.
-- **¿Cuándo usarlo?** Siempre que entrenes un modelo, para evitar que falle con nuevos datos.
-- ✅ **Ejemplo práctico:** Entrenar un modelo que reconozca correos spam y probar que funcione con nuevos mensajes.
+- **Técnicas:** Hold-Out, Cross-Validation.
+- **¿Cómo funciona?**
+  - Hold-Out: divide el dataset en entrenamiento y prueba.
+  - Cross-Validation: repite esto varias veces y promedia los resultados.
+- **Pasos:**
+  1. Separar datos (por ejemplo 80% entrenamiento, 20% prueba).
+  2. Entrenar el modelo.
+  3. Evaluar el modelo.
+- ✅ **Ejemplo práctico:** Validar un modelo que predice si un correo es spam.
+- 📦 **Librerías usadas:** `pandas`, `numpy`, `sklearn.model_selection`
 
 ---
 
 ### 🤖 Laboratorio 5: Clasificadores Sencillos
-- **¿Qué es esto?** Modelos simples que adivinan a qué grupo pertenece algo, comparándolo con ejemplos parecidos.
-- **¿Cómo funciona?** Calcula distancias y se fija qué clase tiene su vecino más cercano.
-- **¿Cuándo usarlo?** Cuando tienes pocos datos o quieres entender lo básico de clasificación.
-- ✅ **Ejemplo práctico:** Saber si una fruta es manzana o naranja con base en su color y tamaño.
+- **Algoritmos:** 1-NN (Nearest Neighbor), Distancia Euclidiana.
+- **¿Cómo funciona?**
+  - Calcula la distancia entre el nuevo dato y todos los demás.
+  - Elige la clase del dato más cercano.
+- **Fórmula:**  
+  Euclidiana:  
+  `d = sqrt((x1 - x2)^2 + (y1 - y2)^2 + ...)`
+- ✅ **Ejemplo práctico:** Clasificar frutas por tamaño y color.
+- 📦 **Librerías usadas:** `pandas`, `numpy`, `matplotlib.pyplot`
 
 ---
 
 ### 🔄 Laboratorio 6: Validación de Modelos
-- **¿Qué es esto?** Una forma más completa de probar tu modelo usando muchas divisiones de datos.
-- **¿Cómo funciona?** Repite la validación varias veces con distintas partes del dataset.
-- **¿Cuándo usarlo?** Cuando quieres estar más seguro del rendimiento real del modelo.
-- ✅ **Ejemplo práctico:** Evaluar bien un modelo que recomienda películas según tus gustos.
+- **Técnica:** K-Fold Cross Validation.
+- **¿Cómo funciona?**
+  - Divide los datos en *k* partes y evalúa el modelo *k* veces cambiando los datos de prueba.
+- **Pasos:**
+  1. Dividir en K bloques.
+  2. Entrenar con K-1 bloques.
+  3. Probar con el bloque restante.
+  4. Repetir K veces.
+- ✅ **Ejemplo práctico:** Evaluar modelo de recomendación.
+- 📦 **Librerías usadas:** `pandas`, `numpy`, `sklearn.model_selection.KFold`
 
 ---
 
 ### 🔎 Laboratorio 7: Modelos de Clasificación
-- **¿Qué es esto?** Son versiones prácticas de clasificadores como 1NN o Euclidiano.
-- **¿Cómo funciona?** Compara los datos nuevos con los conocidos y decide la clase por cercanía.
-- **¿Cuándo usarlo?** Para problemas de clasificación básicos o para comparar con otros modelos.
-- ✅ **Ejemplo práctico:** Predecir si un estudiante pasará o no con base en sus calificaciones anteriores.
+- **Algoritmos:** 1-NN, Clasificador Euclidiano.
+- **¿Cómo funciona?**
+  - El nuevo punto se clasifica según la clase del punto más cercano.
+- ✅ **Ejemplo práctico:** Predecir si un alumno pasará con base en sus calificaciones.
+- 📦 **Librerías usadas:** `pandas`, `numpy`, `sklearn.preprocessing`, `sklearn.metrics`
 
 ---
 
 ### 📈 Laboratorio 8: Evaluación de Modelos
-- **¿Qué es esto?** Comparación entre diferentes modelos para ver cuál funciona mejor.
-- **¿Cómo funciona?** Usa métricas como la precisión o la matriz de confusión.
-- **¿Cuándo usarlo?** Siempre que tengas varios modelos y quieras elegir el mejor.
-- ✅ **Ejemplo práctico:** Comparar qué tan bien clasifican tus modelos correos como spam o no spam.
+- **Modelos:** 1-NN, K-NN, Naive Bayes.
+- **¿Cómo funciona?**
+  - K-NN: considera los *k* vecinos más cercanos.
+  - Naive Bayes: calcula la probabilidad de una clase usando Bayes.
+- **Fórmula (Naive Bayes):**  
+  `P(C|X) = (P(X|C) * P(C)) / P(X)`
+- ✅ **Ejemplo práctico:** Detectar correos spam con diferentes algoritmos.
+- 📦 **Librerías usadas:** `pandas`, `numpy`, `sklearn.model_selection`, `sklearn.metrics`, `sklearn.naive_bayes`, `sklearn.neighbors`
 
 ---
 
 ### 🌳 Laboratorio 9: Modelos Avanzados
-- **¿Qué es esto?** Modelos más potentes como Árboles de Decisión, Bosques Aleatorios y SVM.
-- **¿Cómo funciona?** Aprenden reglas más complejas para tomar decisiones.
-- **¿Cuándo usarlo?** Cuando quieres mejorar la precisión de tus predicciones.
-- ✅ **Ejemplo práctico:** Usar un Random Forest para predecir si un cliente dejará de usar una app.
+- **Modelos:** Árboles de Decisión, Random Forest, SVM.
+- **¿Cómo funciona?**
+  - Árboles: dividen los datos con reglas simples.
+  - Random Forest: muchos árboles decidiendo en conjunto.
+  - SVM: encuentra el mejor margen para separar clases.
+- ✅ **Ejemplo práctico:** Predecir si un usuario dejará de usar una app.
+- 📦 **Librerías usadas:** `pandas`, `numpy`, `sklearn.tree`, `sklearn.ensemble`, `sklearn.svm`, `sklearn.metrics`
 
 ---
 
-## ⚙️ Requisitos
+## ⚙️ Requisitos generales
 
 - Python 3.8 o superior
-- Algunas librerías útiles: `numpy`, `pandas`, `scikit-learn`, `matplotlib`
-- Entorno recomendado: Jupyter Notebook o VSCode
+- Algunas librerías comunes:
+  - `numpy`
+  - `pandas`
+  - `matplotlib`
+  - `scikit-learn`
 
 ---
 
