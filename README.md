@@ -7,9 +7,10 @@
 ## 📚 ¿Qué vas a encontrar?
 
 ### 🔍 Laboratorio 2: Depth First Search (DFS)
+
 - **Algoritmo:** Búsqueda en profundidad (DFS).
 - **¿Cómo funciona?**
-  - Usa una estructura tipo *pila* (stack) para explorar un camino hasta el final antes de retroceder.
+  - Usa una estructura tipo _pila_ (stack) para explorar un camino hasta el final antes de retroceder.
   - Es útil cuando quieres recorrer todos los caminos posibles.
 - **Fórmula/Pasos:**
   1. Elige un nodo inicial.
@@ -24,9 +25,10 @@
 ---
 
 ### 🧩 Laboratorio 3: Resolución de Problemas con Búsqueda Informada
-- **Algoritmos:** A* (A estrella), Simulated Annealing.
+
+- **Algoritmos:** A\* (A estrella), Simulated Annealing.
 - **¿Cómo funciona?**
-  - A* busca el camino más corto usando heurísticas.
+  - A\* busca el camino más corto usando heurísticas.
     - `f(n) = g(n) + h(n)`
     - Donde:
       - `g(n)` es el costo del camino hasta el nodo.
@@ -38,6 +40,7 @@
 ---
 
 ### ✅ Laboratorio 4: Métodos de Validación
+
 - **Técnicas:** Hold-Out, Cross-Validation.
 - **¿Cómo funciona?**
   - Hold-Out: divide el dataset en entrenamiento y prueba.
@@ -52,6 +55,7 @@
 ---
 
 ### 🤖 Laboratorio 5: Clasificadores Sencillos
+
 - **Algoritmos:** 1-NN (Nearest Neighbor), Distancia Euclidiana.
 - **¿Cómo funciona?**
   - Calcula la distancia entre el nuevo dato y todos los demás.
@@ -65,9 +69,10 @@
 ---
 
 ### 🔄 Laboratorio 6: Validación de Modelos
+
 - **Técnica:** K-Fold Cross Validation.
 - **¿Cómo funciona?**
-  - Divide los datos en *k* partes y evalúa el modelo *k* veces cambiando los datos de prueba.
+  - Divide los datos en _k_ partes y evalúa el modelo _k_ veces cambiando los datos de prueba.
 - **Pasos:**
   1. Dividir en K bloques.
   2. Entrenar con K-1 bloques.
@@ -79,6 +84,7 @@
 ---
 
 ### 🔎 Laboratorio 7: Modelos de Clasificación
+
 - **Algoritmos:** 1-NN, Clasificador Euclidiano.
 - **¿Cómo funciona?**
   - El nuevo punto se clasifica según la clase del punto más cercano.
@@ -88,9 +94,10 @@
 ---
 
 ### 📈 Laboratorio 8: Evaluación de Modelos
+
 - **Modelos:** 1-NN, K-NN, Naive Bayes.
 - **¿Cómo funciona?**
-  - K-NN: considera los *k* vecinos más cercanos.
+  - K-NN: considera los _k_ vecinos más cercanos.
   - Naive Bayes: calcula la probabilidad de una clase usando Bayes.
 - **Fórmula (Naive Bayes):**  
   `P(C|X) = (P(X|C) * P(C)) / P(X)`
@@ -100,6 +107,7 @@
 ---
 
 ### 🌳 Laboratorio 9: Modelos Avanzados
+
 - **Modelos:** Árboles de Decisión, Random Forest, SVM.
 - **¿Cómo funciona?**
   - Árboles: dividen los datos con reglas simples.
@@ -125,5 +133,6 @@
 
 1. Clona el proyecto:
    ```bash
-   git clone https://github.com/tu_usuario/ia-practicas.git
-   cd ia-practicas
+   git clone https://github.com/Alangh0011/Inteligencia-Artificial.git
+   cd Inteligencia-Artificial
+   ```
